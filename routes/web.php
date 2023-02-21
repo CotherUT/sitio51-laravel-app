@@ -38,7 +38,7 @@ Route::get('/', function(){
 })->name('index');
 
 Route::get('/materias', 
-    'App\Http\Controllers\MateriaController')->name('materias');
+    'App\Http\Controllers\MateriasController@index')->name('materias');
 
 Route::get('/alumnos', function(){
     return view('Alumnos');

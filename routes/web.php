@@ -38,7 +38,7 @@ Route::get('/', function(){
 })->name('index');
 
 Route::get('/materias', 
-    'App\Http\Controllers\MateriasController@index')->name('materias');
+    'App\Http\Controllers\MateriasController@index')->name('materias_index');
 
 Route::get('/alumnos', function(){
     return view('Alumnos');
@@ -51,3 +51,6 @@ Route::get('/carreras', function(){
 Route::get('/profesores', function(){
     return view('Profesores');
 })->name('profesores');
+
+Route::get('/contactanos', 'App\Http\Controllers\ContactanosController')->name('contactanos');
+Route::post('contactanos', 'App\Http\Controllers\MensajeController@store');

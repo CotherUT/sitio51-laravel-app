@@ -76,6 +76,7 @@
                 <li><a href="/carreras">Carreras</a></li>
                 <li><a href="/materias" >Materias</a></li>
                 <li><a href="/profesores" >Profesores</a></li>
+                <li><a href="/contactanos" >Contactanos</a></li>
             </ul>                
         </nav>
     </div>

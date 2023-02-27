@@ -34,7 +34,15 @@ class MensajeController extends Controller
      */
     public function store(Request $request)
     {
-        return("Diste click al boton, entraste al metodo post");
+        request()->validate(
+            [
+                'nombre'=>'required | alpha',
+                'correo'=>'required | email',
+                'asunto'=>'required',
+                'mensaje'=>'required | min:10 | max:29'
+            ]);
+        return ('Datos validos');
+        // return("Diste click al boton, entraste al metodo post");
         //return $request;
     }
 

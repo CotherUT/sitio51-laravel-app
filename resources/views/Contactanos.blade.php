@@ -24,12 +24,16 @@
     <form method='post' action="{{ route('contactanos') }}">
         @csrf
         <input name='nombre' placeholder='Asunto'/>
+        {!! $errors->first('nombre', '<small>:message</small>') !!}
         <br>
         <input name='correo' placeholder='Correo'/>
+        {!! $errors->first('correo', '<small>:message</small>') !!}
         <br>
         <input name='asunto' placeholder='Asunto'/>
+        {!! $errors->first('asunto', '<small>:message</small>') !!}
         <br>
         <textarea name='mansaje' placeholder='Mensaje'></textarea>
+        {!! $errors->first('mensaje', '<small>:message</small>') !!}
         <br>
         <button>Enviar</button>
     </form>

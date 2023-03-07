@@ -10,7 +10,12 @@
     <ul>
         @if ($var_materias)
             @foreach($var_materias as $i)
-            <li>{{ $i['nombre'] }}</li>    
+            {{-- <li>{{ $i['nombre'] }}</li>     --}}
+                <li>
+                    {{ $i->nombre }}<br/>
+                    <small>{{ $i->descripcion }}</small><br/>
+                    <small>{{ $i->created_at }}</small>
+                </li>
             @endforeach
         @else
             <p>No hay materias</p>

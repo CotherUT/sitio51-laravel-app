@@ -53,6 +53,7 @@ class MateriasController extends Controller
     public function show($id)
     {
         //Hacer consultas de informacion
+        return View('Materias.show', ['i'=>Materias::find($id)]);
     }
 
     /**

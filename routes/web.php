@@ -37,8 +37,9 @@ Route::get('/', function(){
     return view('Index');
 })->name('index');
 
-Route::get('/materias', 
-    'App\Http\Controllers\MateriasController@index')->name('materias_index');
+Route::get('/materias', 'App\Http\Controllers\MateriasController@index')->name('materias_index');
+//Pasarle el id de la materia, desde el MateriaController
+Route::get('/materias/{id}', 'App\Http\Controllers\MateriasController@show')->name('materias.show');
 
 Route::get('/alumnos', function(){
     return view('Alumnos');

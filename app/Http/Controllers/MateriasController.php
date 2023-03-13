@@ -20,7 +20,7 @@ class MateriasController extends Controller
         // return view('Materias', compact('var_materias'));
 
         $var_materias = Materias::get();
-        return view("Materias", compact('var_materias'));
+        return view("Materias.index", compact('var_materias'));
     }
 
     /**
@@ -53,7 +53,7 @@ class MateriasController extends Controller
     public function show($id)
     {
         //Hacer consultas de informacion
-        return View('Materias.show', ['i'=>Materias::find($id)]);
+        return View('Materias.show', ['i'=>Materias::findorFail($id)]);
     }
 
     /**

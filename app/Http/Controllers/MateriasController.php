@@ -30,7 +30,8 @@ class MateriasController extends Controller
      */
     public function create()
     {
-        //
+        //Retornar la vista alta, que se encuentra en la carpeta Materias
+        return view('Materias.alta');
     }
 
     /**
@@ -41,7 +42,13 @@ class MateriasController extends Controller
      */
     public function store(Request $request)
     {
-        //Guardar la informacion
+        //Guardar la informacion de la materia en la bd
+        Materias::create([
+            'nombre'=>request('tbNombre'),
+            'descripcion'=>request('tbDescripcion')
+        ]);
+        //Redirigir a la ruta materias_index
+        return redirect()->route('materias_index');
     }
 
     /**

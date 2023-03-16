@@ -3,6 +3,7 @@
 @section('contenido')
     <h1>Materias</h1>
     <h2>Lista de materias</h2>
+    <a href="{{ route('materias.create') }}"> Agregar materia </a>
     <br>
     <br>
     <br>

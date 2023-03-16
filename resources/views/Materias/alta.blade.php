@@ -17,7 +17,9 @@
 
 @section("contenido")
     <h1>Alta de materias</h1>
-    <form>
+
+    {{-- Utilizar el metodo pos y mandar a llamar al metodo store --}}
+    <form method="post" action="{{ route('materias.store') }}">
         @csrf
         <label>
             Nombre de la Materia:<br>

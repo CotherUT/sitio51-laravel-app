@@ -41,6 +41,9 @@ Route::get('/', function(){
 Route::get('/materias', 'App\Http\Controllers\MateriasController@index')->name('materias_index');
 //Obtiene los valores y los manda a el metodo store para guardarlos en la bd
 Route::get('/materias/altas', 'App\Http\Controllers\MateriasController@create')->name('materias.create');
+Route::get('/materias/{id}/editar', 'App\Http\Controllers\MateriasController@edit')->name('materias.edit');
+Route::patch('/materias/{id}', 'App\Http\Controllers\MateriasController@update')->name('materias.update');
+
 Route::post('materias', 'App\Http\Controllers\MateriasController@store')->name('materias.store');
 //Pasarle el id de la materia, desde el MateriaController
 Route::get('/materias/{id}', 'App\Http\Controllers\MateriasController@show')->name('materias.show');

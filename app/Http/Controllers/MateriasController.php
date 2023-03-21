@@ -71,7 +71,9 @@ class MateriasController extends Controller
      */
     public function edit($id)
     {
-        //
+        //obtener el valor desde la bd en la migracion
+        $i = Materias::findorFail($id);
+        return view('Materias.edicion', compact('i'));
     }
 
     /**
@@ -84,6 +86,11 @@ class MateriasController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $i=Materias::findorFail($id);
+        $i->nombre=$request->tbNombre;
+        $i->descripcion=$request->tbDescripcion;
+        $i->save();
+        return redirect()->route('materias.show',$i);
     }
 
     /**

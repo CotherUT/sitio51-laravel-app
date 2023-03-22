@@ -38,6 +38,7 @@ Route::get('/', function(){
 })->name('index');
 
 
+
 Route::get('/materias', 'App\Http\Controllers\MateriasController@index')->name('materias_index');
 //Obtiene los valores y los manda a el metodo store para guardarlos en la bd
 Route::get('/materias/altas', 'App\Http\Controllers\MateriasController@create')->name('materias.create');
@@ -48,6 +49,7 @@ Route::post('materias', 'App\Http\Controllers\MateriasController@store')->name('
 //Pasarle el id de la materia, desde el MateriaController
 Route::get('/materias/{id}', 'App\Http\Controllers\MateriasController@show')->name('materias.show');
 
+Route::delete('/materias/{id}','App\Http\Controllers\MateriasController@destroy')->name('materias.destroy');
 Route::get('/alumnos', function(){
     return view('Alumnos');
 })->name('alumnos');

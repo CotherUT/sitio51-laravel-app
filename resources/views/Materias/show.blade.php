@@ -19,6 +19,10 @@
 @section('contenido')
     <h1>{{ $i->nombre }}</h1>
     <a href="{{ route('materias.edit', $i) }}">Editar materia</a>
+    <form method="post">
+        @csrf @method('DELETE')
+        <button>Eliminar Materia</button>
+    </form>
     <p>{{ $i->descripcion }}</p>
     <p>{{ $i->created_at }}</p>
 @endsection

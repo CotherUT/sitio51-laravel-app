@@ -101,6 +101,9 @@ class MateriasController extends Controller
      */
     public function destroy($id)
     {
+        $i=Materias::findorFail($id);
+        $i->delete();
+        return redirect()->route('materias_index');
         //
     }
 }
